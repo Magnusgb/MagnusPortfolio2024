@@ -1,0 +1,649 @@
+:root {
+  /*Sektion*/
+  --margin-in: auto;
+  --width-sec: 80%;
+}
+
+html {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+* {
+  margin: 0;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  scroll-margin-block-start: 2rem;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+body {
+  background-color: #252525;
+}
+
+.wrapper, #projekt, .filler, #kontakt {
+  margin-inline: var(--margin-in);
+  width: var(--width-sec);
+  margin-bottom: 5rem;
+}
+
+h1, h2, h3, h4 {
+  font-family: "intercom", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+button {
+  border:none;
+  font-family: "intercom", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+p{
+  font-family: "intercom", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.logo {
+  position: absolute;
+  left: 30px;
+  color: #FAF3DD;
+}
+
+
+.some {
+  font-size: 1.5rem;
+  color: #FAF3DD;
+  position: absolute;
+  right: 30px;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: #FAF3DD;
+  font-size: 1.2rem;
+  font-family: "intercom", sans-serif;
+  font-weight: 400;
+  font-style: normal; 
+}
+
+nav {
+display: flex;
+justify-content: center;
+align-items: center;
+padding-top: 3rem;
+
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 6rem;
+}
+.nav-item {
+  position: relative;
+}
+
+.active-nav {
+  background-color: #F4743B;
+  z-index: -2;
+  border-radius: 10px; 
+  position: absolute;
+  top: -8px; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  width: 100px; 
+  height: 35px; 
+}
+
+#section1 {
+  transform-origin: center;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+#herobanner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 90vh;
+}
+
+#herobanner h1 {
+  font-size: 90px;
+  line-height: 1.2;
+  color: #FAF3DD;
+}
+
+#herobanner h3 {
+  font-size: 30px;
+  margin-top: 1.5rem;
+  color: #FAF3DD;
+}
+
+.orangeclr {
+  padding: 0 1.5rem;
+  border-radius: 20px;
+  background-color: hsl(18, 89%, 59%);
+  transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease; /* Tilføj border-color her */
+  border: 2px solid transparent; /* Tilføj en transparent border */
+}
+
+.orangeclr:hover {
+  border-color: #F4743B; /* Ændr border-farven ved hover */
+  color: #FAF3DD;
+  background: none;
+}
+
+.grain-overlay {
+  width: 100%;
+  opacity: .025;
+  background-image: url(/asset/billeder/grainybg.gif);
+  position: fixed;
+  top: -80%;
+  bottom: -80%;
+  left: 0%;
+  right: 0%;
+  z-index: -1;
+}
+
+.rotate-container {
+  display: inline-block;
+  position: absolute;
+  right: 100px;
+  bottom: 80px;
+  transform-origin: center;
+}
+
+.rotate-container img {
+  animation: spin 12s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*Om mig*/
+
+.wrapper {
+  color: #F4743B;
+  display: flex;
+  flex-direction: row;
+}
+
+
+.btnblack {
+  padding: 10px 50px; 
+  border-radius: 20px;
+  background: none;
+  color: #FAF3DD;
+  border: 2px solid #F4743B; 
+  transition: background-color 0.5s, color 0.5s; 
+}
+
+.btnblack:hover {
+  background-color: #F4743B;
+}
+
+.primarybtn {
+  padding: 10px 50px; 
+  border-radius: 20px;
+  background-color: #F4743B; 
+  color: #FAF3DD;
+  transition: transform 0.3s, color 0.3s; 
+  margin-right: 20px;
+  font-size: 1.2rem;
+}
+
+.primarybtn:hover {
+ transform: scale(1.05);
+}
+
+
+.omskriv {
+  line-height: 2;
+  font-size: 16px;
+  font-family: "intercom", sans-serif;
+  font-weight: 400; 
+  font-style: normal;
+  color: #FAF3DD;
+}
+
+.right {
+  border: 2px solid #F4743B;
+  padding: 1rem;
+  border-radius: 10px;
+  animation: fly-in2 linear both;
+  animation-timeline: view(block);
+  animation-range: cover 0% cover 30%;
+}
+
+.right p{
+  margin-bottom: 3.5rem;
+}
+
+.btnprojekt {
+  margin-top: 40px;
+}
+
+.left, .right {
+  flex: 1; 
+  color: #252525;
+}
+
+.left {
+  animation: fly-in linear both;
+  animation-timeline: view(block);
+  animation-range: cover 0% cover 30%;
+}
+
+@keyframes fly-in {
+  from {
+    transform: translateX(10%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fly-in2 {
+  from {
+    transform: translateX(-10%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.wrapper h2,h3{
+  color: #FAF3DD;
+}
+
+.ompb {
+  width: 80%;
+  border-radius: 5px;
+  margin-top: 30px;
+}
+
+.left h2 {
+font-size: 1.3rem;
+}
+
+
+.filler h2 {
+  color: #F4743B;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5rem;
+  animation: reveal linear both;
+  animation-timeline: view(block);
+  animation-range: cover 0% cover 70%;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Projekter */
+
+.projekter {
+  display: flex; 
+  padding-bottom:150px;
+  gap: 50px;
+  animation: fly-in-projekt linear both;
+  animation-timeline: view(block);
+  animation-range: cover 0% cover 30%;
+}
+
+@keyframes fly-in-projekt {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reverse {
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+.projekt-indhold {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: space-between;
+}
+
+.projekt-img {
+  width: 100%;
+}
+
+.projekt-h2 {
+  background-color: #F4743B;
+  color: #FAF3DD;
+  text-align: center;
+  width: 350px;
+  padding: 5px 0;
+  border-radius: 10px;
+}
+
+.projekt-h3 {
+  color: #FAF3DD;
+  font-size: 1.5rem;
+}
+
+.projekt-p {
+  color: #FAF3DD;
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.projekt-btn {
+  position: relative; 
+}
+
+.projekt-btn::after {
+  content: ''; 
+  position: absolute; 
+  left: 0; 
+  bottom: -3px; 
+  width: 100%; 
+  height: 2px; 
+  background-color: #FAF3DD; 
+  transition:0.5s ease 0.1s;
+}
+
+.projekt-btn:hover::after {
+  width: 0; 
+  transition: 0.5s;
+}
+
+.nobtn {
+  text-decoration: line-through solid 3px #F4743B;
+}
+
+/* Kontakt */
+#kontakt {
+  color: #F4743B;
+  line-height: 1.2;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.kontaktbtn {
+  display: inline-block;
+  position: relative;
+  font-family: 'intercom', sans-serif;
+  font-weight: 600;
+  border: #F4743B 2px solid;
+  padding: 10px 50px; 
+  border-radius: 20px;
+  transition: ease-in-out 0.3s; 
+}
+
+.kontaktbtn i {
+  transition: transform 0.3s;
+}
+
+.kontaktbtn:hover i {
+  transform: rotate(90deg);
+}
+
+.kontaktbtn:hover{
+  background-color: #F4743B;
+  color: #FAF3DD;
+}
+
+/* Footer */
+
+.flexbtm {
+  width: var(--width-sec);
+  margin-inline: var(--margin-in);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  color: #FAF3DD;
+  
+}
+
+.btmbtn {
+  display: flex;
+  gap: 40px;
+}
+.toppen {
+  display: flex;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.toppen i {
+  font-size: 1.3rem;
+  transform: rotate(-90deg);
+}
+
+.some-btn {
+  position: relative; 
+}
+
+.some-btn::after {
+  content: ''; 
+  position: absolute; 
+  left: 0; 
+  bottom: -3px; 
+  width: 0; 
+  height: 2px; 
+  background-color: #FAF3DD; 
+  transition:0.5s ease 0.1s;
+}
+
+.some-btn:hover::after {
+  width: 100%; 
+  transition: 0.3s;
+}
+
+#kontakt {
+animation: fly-in-projekt linear both;
+  animation-timeline: view(block);
+  animation-range: cover 0% cover 30%;
+}
+
+
+
+@keyframes fly-in-projekt {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobil version */
+
+@media (max-width: 768px) {
+
+  img {
+    max-width: 100%;
+    height: auto;
+}
+
+nav {
+  margin-right: .5rem;
+}
+
+
+  .nav-links a {
+    font-size: 1rem;
+  }
+
+  .nav-links {
+    gap:50px;
+  }
+
+  .active-links {
+    width: 20px;
+  }
+
+  .flexbtm {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+  }
+
+ .text h2 {
+    font-size: 31px;
+    text-align: left;
+    padding-bottom: 10px;
+ }
+
+ #kontakt {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+ }
+
+  .btnbtm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .filler {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+  .text {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .star {
+    display: none;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .primarybtn {
+    padding: 10px 30px; 
+  }
+
+  #herobanner h1 {
+    font-size: 2.5rem;
+  }
+
+  #herobanner h3 {
+    font-size: 1.5rem;
+  }
+
+  #herobanner {
+    height: 80vh;
+  }
+
+  .rotate-container img {
+    width: 50px;
+    position: relative;
+    left: 50px;
+    top: 0px;
+  }
+
+  .preload h4 {
+    font-size:30px;
+  }
+ 
+  .projekter {
+    display: flex;
+    flex-direction: column;
+    text-align: left; 
+    gap:30px;
+    padding-bottom: 80px;
+  }
+
+  .projekt-img {
+    width: 100%;
+    border-radius: 5px;
+  }
+
+  .projekt-indhold {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .projekt-h2 {
+    width: 80%;
+  }
+}
+
+@media (min-width:1800px) {
+
+  .right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 2px solid #F4743B;
+    padding: 1rem;
+    border-radius: 10px;
+  }
+  
+  .right h2 {
+    font-size: 2.2rem;
+  }
+  
+  .right p {
+    line-height:2.2;
+    font-size: 18px;
+    font-family: "intercom", sans-serif;
+    font-weight: 400; 
+    font-style: normal;
+    color: #FAF3DD;
+  }
+
+}
