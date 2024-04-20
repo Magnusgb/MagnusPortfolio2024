@@ -25,10 +25,15 @@ body {
   background-color: #252525;
 }
 
-.wrapper, #projekt, .filler, #kontakt {
+.wrapper, .filler, #kontakt {
   margin-inline: var(--margin-in);
   width: var(--width-sec);
   margin-bottom: 5rem;
+}
+
+#projekt {
+  margin-inline: var(--margin-in);
+  width: var(--width-sec);
 }
 
 h1, h2, h3, h4 {
@@ -224,20 +229,15 @@ padding-top: 3rem;
 }
 
 .right {
-  border: 2px solid #F4743B;
   padding: 1rem;
+  border: 2px solid #F4743B;
   border-radius: 10px;
   animation: fly-in2 linear both;
   animation-timeline: view(block);
   animation-range: cover 0% cover 30%;
-}
-
-.right p{
-  margin-bottom: 3.5rem;
-}
-
-.btnprojekt {
-  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .left, .right {
@@ -278,7 +278,9 @@ padding-top: 3rem;
 }
 
 .ompb {
-  width: 80%;
+  width: 60%;
+  max-width: 100%;
+  height: auto;
   border-radius: 5px;
   margin-top: 30px;
 }
@@ -339,7 +341,7 @@ font-size: 1.3rem;
   display: flex;
   flex-direction: column;
   gap: 30px;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .projekt-img {
@@ -388,6 +390,12 @@ font-size: 1.3rem;
 
 .nobtn {
   text-decoration: line-through solid 3px #F4743B;
+}
+
+.btn {
+  display: flex;
+  flex-direction: row;
+  gap:20px;
 }
 
 /* Kontakt */
@@ -501,15 +509,25 @@ animation: fly-in-projekt linear both;
 
 @media (max-width: 768px) {
 
-  img {
+img {
     max-width: 100%;
     height: auto;
+}
+
+.ompb {
+  width: 100%;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 nav {
   margin-right: .5rem;
 }
-
 
   .nav-links a {
     font-size: 1rem;
@@ -554,7 +572,6 @@ nav {
     justify-content: center;
     align-items: center;
   }
-
 
   .text {
     font-size: 2.5rem;
